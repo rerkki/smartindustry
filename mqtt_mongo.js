@@ -21,7 +21,7 @@ mq.on('connect', function(){
 
 //Määritellään tietokanta-API
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://eki:eki@cluster0.91fze.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; //korvaa tämä omalla URI:lla
+const uri = "mongodb+srv://sampos:sampos@cluster0.iw6gjlj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; //
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
