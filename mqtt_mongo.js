@@ -1,5 +1,5 @@
 
-//MQTT Brpker definitions
+//MQTT Broker definitions
 const mqtt    = require('mqtt');
 const broker = 'mqtt://test.mosquitto.org';
 const user = '';
