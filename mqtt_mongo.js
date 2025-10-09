@@ -5,10 +5,6 @@ const broker = 'mqtt://test.mosquitto.org';
 const user = '';
 const pw = ''; 
 
-// Give unique names for database and collection (MongoDB Atlas)
-const dbname = "sensordata";
-const collection = "sensordata";
-
 //Connect to broker
 mq = mqtt.connect(broker, {
   'username': user,
@@ -16,7 +12,7 @@ mq = mqtt.connect(broker, {
 });
 
 //subscribe the topic
-mq.subscribe('automaatio1/#');
+mq.subscribe('automaatio/#');
 
 //dotify about successful connection
 mq.on('connect', function(){
@@ -27,7 +23,7 @@ mq.on('connect', function(){
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 //korvaa alla oleva URI-string omalla URI:lla (hae se Mongo Atlaksen Connect-kohdasta, lisää myös oma käyttäjätunnus ja salasana)
-const uri = "mongodb+srv://<username>:<password>@clusterxxxxx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; 
+const uri = "mongodb+srv://eki:<pw>@cluster0xxxxxxx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; 
 
 const client = new MongoClient(uri, {
   serverApi: {
@@ -37,17 +33,30 @@ const client = new MongoClient(uri, {
   }
 });
 
-//Definition of database & collection and and object for data retrieval/storage
-const myDB = client.db(dbname);
-const myColl = myDB.collection(collection);
+//data object for MQTT message
 var obj;
 
 //wait for data from MQTT broker and insert it to MongoDB
 mq.on('message', function(topic, message) {
-  console.log(message.toString('utf8'));
-  obj = JSON.parse(message);
-  obj.DateTime = timeConverter(Date.now());
+	//console.log(message.toString('utf8'));
+	obj = JSON.parse(message);
+  
+	//DB and collection names are obtained from the message
+	var dbname = obj.db_name;
+	var collection = obj.coll_name;
+
+	//timestamp is added
+	obj.DateTime = timeConverter(Date.now());
+  
+	console.log(obj);
+ 
+	//Definition of database & collection and and object for data retrieval/storage
+	const myDB = client.db(dbname);
+	const myColl = myDB.collection(collection);
+  
+	//insertion of ¨message to MongoDB
 	myColl.insertOne(obj);
+		
 	console.log(
 	`An entry was inserted successfully`,
 	);
