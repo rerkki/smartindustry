@@ -1,0 +1,18 @@
+{
+  "name": "Node.js & Mongo DB",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  "features": {},
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mongodb.mongodb-vscode"
+      ]
+    }
+  },
+
+  "forwardPorts": [1883, 3000, 27017]
+}
