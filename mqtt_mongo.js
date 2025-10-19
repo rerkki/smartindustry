@@ -1,7 +1,8 @@
 
 //MQTT Broker definitions
 const mqtt    = require('mqtt');
-const broker = 'mqtt://test.mosquitto.org';
+const broker = 'mqtt://automaatio:Z0od2PZF65jbtcXu@automaatio.cloud.shiftr.io';
+//const broker = 'mqtt://test.mosquitto.org';
 const user = '';
 const pw = ''; 
 
@@ -22,8 +23,9 @@ mq.on('connect', function(){
 //API for MongoDB Atlas
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-//korvaa alla oleva URI-string omalla URI:lla (hae se Mongo Atlaksen Connect-kohdasta, lisää myös oma käyttäjätunnus ja salasana)
-const uri = "mongodb+srv://eki:<pw>@cluster0xxxxxxx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; 
+// Replace the URI-string below by your own URI (get that from Mongo DB Atlas 
+// Connect > driver > NodeJs (v. 6.7), don't forget to add your own username & password to the string
+const uri = "mongodb+srv://eki:eki@cluster0.91fze.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; 
 
 const client = new MongoClient(uri, {
   serverApi: {
