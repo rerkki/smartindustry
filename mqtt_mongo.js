@@ -1,8 +1,8 @@
 
 //MQTT Broker definitions
 const mqtt    = require('mqtt');
-const broker = 'mqtt://automaatio:Z0od2PZF65jbtcXu@automaatio.cloud.shiftr.io';
-//const broker = 'mqtt://test.mosquitto.org';
+//const broker = 'mqtt://automaatio:Z0od2PZF65jbtcXu@automaatio.cloud.shiftr.io';
+const broker = 'mqtt://test.mosquitto.org';
 const user = '';
 const pw = ''; 
 
@@ -53,8 +53,8 @@ mq.on('message', function(topic, message) {
 	console.log(obj);
  
 	//Definition of database & collection and and object for data retrieval/storage
-	const myDB = client.db(dbname);
-	const myColl = myDB.collection(collection);
+	const myDB = client.db("sensordata2");
+	const myColl = myDB.collection("sensordata2");
   
 	//insertion of ¨message to MongoDB
 	myColl.insertOne(obj);
