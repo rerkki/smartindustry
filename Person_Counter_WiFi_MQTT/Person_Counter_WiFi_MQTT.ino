@@ -95,7 +95,7 @@ if (sensor > 250 && (millis() - lastMillis2 > 500)) {
                       "\"id\":\"" + myID + "\"" + "," +
 
 /////Then, the value of person counter:
-                       "\"person count\":\"" + pCount + "," +
+                       "\"person count\":" + pCount +
 
 ///// Finally, the JSON is closed
                        "}";
