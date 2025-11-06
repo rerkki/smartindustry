@@ -1,8 +1,8 @@
 
 //MQTT Broker definitions
 const mqtt    = require('mqtt');
-const broker = 'mqtt://automaatio:Z0od2PZF65jbtcXu@automaatio.cloud.shiftr.io';
-//const broker = 'mqtt://test.mosquitto.org';
+//const broker = 'mqtt://automaatio:Z0od2PZF65jbtcXu@automaatio.cloud.shiftr.io';
+const broker = 'mqtt://test.mosquitto.org';
 const user = '';
 const pw = ''; 
 
@@ -25,8 +25,8 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 // Replace the URI-string below by your own URI (get that from Mongo DB Atlas 
 // Connect > driver > NodeJs (v. 6.7), don't forget to add your own username & password to the string
-const uri = "mongodb+srv://eki:eki@cluster0.91fze.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; 
-
+const uri = "mongodb+srv://vertti:vertti@ewerts.6iueto6.mongodb.net/?appName=EwertS"; 
+//URI osoite mongodb+srv://vertti:vertti@ewerts.6iueto6.mongodb.net/?retryWrites=true&w=majority&appName=EwertS
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -53,8 +53,8 @@ mq.on('message', function(topic, message) {
 	console.log(obj);
  
 	//Definition of database & collection and and object for data retrieval/storage
-	const myDB = client.db(dbname);
-	const myColl = myDB.collection(collection);
+	const myDB = client.db("sensordata2");
+	const myColl = myDB.collection("sensordata2");
   
 	//insertion of ¨message to MongoDB
 	myColl.insertOne(obj);
