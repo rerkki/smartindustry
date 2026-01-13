@@ -16,7 +16,7 @@ String myID = "id_test"; //serial number, mac address or other unique identifica
 
 ////// Give WiFi credentials here
 const char ssid[] = "Erkki's Galaxy S23";
-const char pass[] = "laaksola";
+const char pass[] = "xxxxxxx";
 //////
 
 WiFiClient net;
