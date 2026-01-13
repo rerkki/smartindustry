@@ -16,9 +16,9 @@ DHT dht(DHTPIN, DHTTYPE);
 //////
 
 ////// Give database information here:
-String myDB = "db_test"; //unique database name
-String myColl = "coll_test"; //unique collection name
-String myID = "id"; //serial number, mac address or other unique identification for your device
+String myDB = "data_ml"; //unique database name
+String myColl = "pCount"; //unique collection name
+String myID = "aiot"; //serial number, mac address or other unique identification for your device
 //////
 
 ////// Give WiFi credentials here

@@ -9,9 +9,9 @@
 #include <MQTT.h>
 
 ////// Give database information here:
-String myDB = "db_eki"; //unique database name
+String myDB = "data_ml"; //unique database name
 String myColl = "p_count"; //unique collection name
-String myID = "id_test"; //serial number, mac address or other unique identification for your device
+String myID = "aiot"; //serial number, mac address or other unique identification for your device
 //////
 
 ////// Give WiFi credentials here
