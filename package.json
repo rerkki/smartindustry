@@ -16,9 +16,9 @@
     "url": "https://github.com/rerkki/smartindustry/issues"
   },
   "homepage": "https://github.com/rerkki/smartindustry#readme",
-  "description": "",
   "dependencies": {
-    "mongodb": "^6.19.0",
-    "mqtt": "^5.14.1"
-  }
+    "mongodb": "^6.21.0",
+    "mqtt": "^5.15.0"
+  },
+  "description": ""
 }
