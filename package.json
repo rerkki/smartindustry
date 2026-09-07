@@ -20,5 +20,6 @@
     "mongodb": "^6.21.0",
     "mqtt": "^5.15.0"
   },
+  "devDependencies": {},
   "description": ""
 }
