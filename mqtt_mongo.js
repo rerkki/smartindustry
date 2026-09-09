@@ -60,7 +60,7 @@ mq.on('message', function(topic, message) {
 	myColl.insertOne(obj);
 		
 	console.log(
-	`An entry was inserted successfully`,
+	` An entry was inserted successfully`,
 	);
 });
 
